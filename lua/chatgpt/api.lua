@@ -128,7 +128,7 @@ function Api.make_call(url, params, cb)
     end
   end
 
-  print("Executing: " .. url .. " " .. vim.inspect(args))
+  print("Api.make_call: " .. url .. " " .. vim.inspect(args))
   Api.job = job
     :new({
       command = "curl",
@@ -318,7 +318,7 @@ function Api.setup()
 end
 
 function Api.exec(cmd, args, on_stdout_chunk, on_complete, should_stop, on_stop)
-  print("Executing: {" .. cmd .. " " .. vim.inspect(args))
+  print("Api.exec: " .. cmd .. " " .. vim.inspect(args))
   local stdout = vim.loop.new_pipe()
   local stderr = vim.loop.new_pipe()
   local stderr_chunks = {}
